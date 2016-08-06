@@ -4,33 +4,49 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using EAEmployeeTest.Pages;
 using EAAutoFramework.Base;
+using OpenQA.Selenium.IE;
+using OpenQA.Selenium.Firefox;
 
 namespace EAEmployeeTest
 {
     [TestClass]
-    public class UnitTest1
+    public class UnitTest1 : Base
     {
         string url = "http://localhost/";
+
+        public void OpenBrowser(BrowserType browserType = BrowserType.Chrome)
+        {
+            switch (browserType)
+            {
+                case BrowserType.IE:
+                    DriverContext.Driver = new InternetExplorerDriver();
+                    DriverContext.Browser = new Browser(DriverContext.Driver);
+                    break;
+                case BrowserType.Firefox:
+                    DriverContext.Driver = new FirefoxDriver();
+                    DriverContext.Browser = new Browser(DriverContext.Driver);
+                    break;
+                case BrowserType.Chrome:
+                    DriverContext.Driver = new ChromeDriver();
+                    DriverContext.Browser = new Browser(DriverContext.Driver);
+                    break;
+            }
+        }
 
         [TestMethod]
         public void TestMethod1()
         {
-            DriverContext.Driver = new ChromeDriver();
-            DriverContext.Driver.Navigate().GoToUrl(url);
+            OpenBrowser(BrowserType.Chrome);
+            DriverContext.Browser.GoToUrl(url);
 
-            Login();
+            //Login page
+            CurrentPage = GetInstance<LoginPage>();
+            CurrentPage.As<LoginPage>().ClickLoginLink();
+            CurrentPage.As<LoginPage>().Login("admin", "password");
 
-            DriverContext.Driver.Close();
-        }
-
-        public void Login()
-        {
-            LoginPage page = new LoginPage();
-
-            page.lnkLogin.Click();
-            page.txtUserName.SendKeys("admin");
-            page.txtPassword.SendKeys("password");
-            page.btnLogin.Submit();
+            //Employee page
+            CurrentPage = CurrentPage.As<LoginPage>().ClickEmployeeList();
+            CurrentPage.As<EmployeePage>().ClickCreateNew();
         }
     }
 }

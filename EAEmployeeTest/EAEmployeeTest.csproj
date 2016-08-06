@@ -61,6 +61,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Pages\CreateEmployeePage.cs" />
     <Compile Include="Pages\EmployeePage.cs" />
     <Compile Include="Pages\LoginPage.cs" />
     <Compile Include="UnitTest1.cs" />

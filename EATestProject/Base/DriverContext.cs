@@ -23,5 +23,7 @@ namespace EAAutoFramework.Base
             }
         }
 
+        public static Browser Browser { get; set; }
+
     }
 }

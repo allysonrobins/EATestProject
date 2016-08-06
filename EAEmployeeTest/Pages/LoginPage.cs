@@ -8,15 +8,48 @@ namespace EAEmployeeTest.Pages
     {
         //Objects for the Login page
         [FindsBy(How = How.LinkText, Using = "Log in")]
-        public IWebElement lnkLogin { get; set; }
+        IWebElement lnkLogin { get; set; }
+
+        [FindsBy(How = How.LinkText, Using = "Employee List")]
+        IWebElement lnkEmployeeList { get; set; }
 
         [FindsBy(How = How.Id, Using = "UserName")]
-        public IWebElement txtUserName { get; set; }
+        IWebElement txtUserName { get; set; }
 
         [FindsBy(How = How.Id, Using = "Password")]
-        public IWebElement txtPassword { get; set; }
+        IWebElement txtPassword { get; set; }
 
         [FindsBy(How = How.CssSelector, Using = "input.btn")]
-        public IWebElement btnLogin { get; set; }
+        IWebElement btnLogin { get; set; }
+
+        /// <summary>
+        /// Logins the specified user name.
+        /// </summary>
+        /// <param name="userName">Name of the user.</param>
+        /// <param name="password">The password.</param>
+        public void Login(string userName, string password)
+        {
+            txtUserName.SendKeys(userName);
+            txtPassword.SendKeys(password);
+            btnLogin.Submit();
+        }
+
+        /// <summary>
+        /// Clicks the login link.
+        /// </summary>
+        public void ClickLoginLink()
+        {
+            lnkLogin.Click();
+        }
+
+        /// <summary>
+        /// Clicks the employee list.
+        /// </summary>
+        /// <returns>EmployeePage</returns>
+        public EmployeePage ClickEmployeeList()
+        {
+            lnkEmployeeList.Click();
+            return GetInstance<EmployeePage>();
+        }
     }
 }
