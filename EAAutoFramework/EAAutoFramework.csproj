@@ -68,7 +68,7 @@
     <Compile Include="Extensions\WebDriverExtensions.cs" />
     <Compile Include="Extensions\WebElementExtensions.cs" />
     <Compile Include="Helpers\DataHelperExtensions.cs" />
-    <Compile Include="Helpers\ExelHelpers.cs" />
+    <Compile Include="Helpers\ExcelHelpers.cs" />
     <Compile Include="Helpers\HtmlTableHelper.cs" />
     <Compile Include="Helpers\LogHelpers.cs" />
     <Compile Include="Helpers\ReportingHelpers.cs" />

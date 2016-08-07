@@ -74,12 +74,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EATestProject\EAAutoFramework.csproj">
+    <ProjectReference Include="..\EAAutoFramework\EAAutoFramework.csproj">
       <Project>{9775c8ee-bcbe-4fb2-b505-73899ff47a89}</Project>
       <Name>EAAutoFramework</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

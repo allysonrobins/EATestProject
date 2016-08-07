@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace EAAutoFramework.Helpers
 {
-    public class ExelHelpers
+    public class ExcelHelpers
     {
         private static List<Datacollection> _dataCol = new List<Datacollection>();
 
