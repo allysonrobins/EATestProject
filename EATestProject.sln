@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EAAutoFramework", "EATestProject\EAAutoFramework.csproj", "{9775C8EE-BCBE-4FB2-B505-73899FF47A89}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EAAutoFramework", "EAAutoFramework\EAAutoFramework.csproj", "{9775C8EE-BCBE-4FB2-B505-73899FF47A89}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EAEmployeeTest", "EAEmployeeTest\EAEmployeeTest.csproj", "{E7484061-D572-423F-8E40-E445D0D0A94B}"
 EndProject
